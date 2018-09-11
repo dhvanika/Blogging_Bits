@@ -1,0 +1,44 @@
+Resources
+https://developers.facebook.com/docs/plugins/page-plugin/
+https://developers.facebook.com/docs/plugins/embedded-posts
+https://developers.facebook.com/docs/plugins/embedded-posts#how-to-get-a-posts-url
+https://www.facebook.com/plugins/post/oembed.json/?url=
+https://developers.facebook.com/docs/plugins/page-plugin
+https://smashballoon.com/custom-facebook-feed/page-token/
+
+
+Facebook Embedded Events iFrame
+<iframe width="500" height="500" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media" style="border:none;overflow:hidden;" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FBlackSwanBodywork%2F&tabs=events&width=500&height=500&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=false"></iframe>
+
+
+Facebook Embedded Post iFrame
+<iframe width="500" height="273" scrolling="no" frameborder="0" allowtransparency="true" style="border: none; overflow: hidden;" src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fevents%2F1666068013444806%2Fpermalink%2F1778489128869360%2F&amp;width=500&amp;show_text=true&amp;height=273&amp;appId" ></iframe>
+<iframe width="500" height="273" scrolling="no" frameborder="0" allowTransparency="true" style="border:none;overflow:hidden" src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fevents%2F1666068013444806%2Fpermalink%2F1778489128869360&show_text=true"></iframe>
+
+
+Facebook Embedded Posts Scripting
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
+add_filter( 'tribe_get_event_website_url', 'event_website_use_fb_event_url', 10, 2 );
+
+function event_website_use_fb_event_url( $url, $id ) {
+ $fb_id = get_post_meta( $id, '_FacebookID', true );
+ if ( empty( $fb_id ) ) return $url;
+ return esc_url( 'http://facebook.com/events/' . $fb_id );
+}
+
+event_website_use_fb_event_url( $url, $id )
+</script>
+
+<div class="fb-video" data-href="https://www.facebook.com/mrsicenter/videos/1933249970048775/" data-width="500" data-show-text="true"><blockquote cite="https://www.facebook.com/mrsicenter/videos/1933249970048775/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/mrsicenter/videos/1933249970048775/"></a><p></p>Posted by <a href="https://www.facebook.com/mrsicenter/">MRSI Center</a> on Friday, December 29, 2017</blockquote></div>
+
+<div class="fb-post" data-href="https://www.facebook.com/events/1666068013444806/permalink/1778489128869360/" data-width="500" data-show-text="true"><blockquote cite="https://www.facebook.com/events/1666068013444806/permalink/1778489128869360/" class="fb-xfbml-parse-ignore"><p>A little taste from the last Shoshin Shiatsu Certification.  Hope to see you in March at https://www.facebook.com/events/1666068013444806.</p>Posted by <a href="https://www.facebook.com/randy.cummins.37">Randy Cummins</a> on&nbsp;<a href="https://www.facebook.com/events/1666068013444806/permalink/1778489128869360/">Tuesday, February 20, 2018</a></blockquote></div>
+
+<div class="fb-page" data-adapt-container-width="true" data-hide-cover="true" data-href="https://www.facebook.com/blackswanbodywork" data-show-facepile="true" data-small-header="true" data-tabs="events"></div>
