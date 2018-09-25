@@ -16,6 +16,20 @@ Facebook Embedded Post iFrame
 <iframe width="500" height="273" scrolling="no" frameborder="0" allowTransparency="true" style="border:none;overflow:hidden" src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fevents%2F1666068013444806%2Fpermalink%2F1778489128869360&show_text=true"></iframe>
 
 
+Facebook Embedded Event Post iFrame
+<a href="https://developers.facebook.com/docs/plugins/embedded-posts">https://developers.facebook.com/docs/plugins/embedded-posts</a>
+
+<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fevents%2F391603731362518%2Fpermalink%2F453036628552561%2F&width=500&show_text=true&height=426" 
+width="500" 
+height="426" 
+scrolling="no" 
+frameborder="0" 
+allowTransparency="true" 
+allow="encrypted-media"
+style="border:none;overflow:hidden"
+></iframe>
+
+
 Facebook Embedded Posts Scripting
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
